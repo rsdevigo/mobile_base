@@ -1,20 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, AsyncStorage, ScrollView } from 'react-native';
+import AppHeader from '../components/app-header';
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Home',
-  };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home Screen</Text>
-        <Button
-          title="Ir até Sobre"
-          onPress={() => {
-            this.props.navigation.navigate('About')
-          }}
-        />
+        <AppHeader title="Exemplo titulo" icon="https://maxcdn.icons8.com/Share/icon/color/Gaming/pokecoin1600.png" backgroundColor="#009688" />
+        <ScrollView style={styles.container}>
+          <Text>Home Screen</Text>
+        </ScrollView>
       </View>
     );
   }
@@ -22,9 +18,6 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#eeeeee',
   },
 });
